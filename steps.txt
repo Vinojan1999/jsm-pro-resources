@@ -1,3 +1,5 @@
 -   Install the Next app with Shadcn UI (npx create-next-app@latest ./ --typescript --tailwind)
 -   Init Shadcn (npx shadcn-ui@latest init)
 -   Install other dependancies (npm install @sanity/image-url @sanity/vision query-string sanity)
+-   Create a file structure
+-   Update Tailwind.config.ts and global.css
