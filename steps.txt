@@ -3,3 +3,9 @@
 -   Install other dependancies (npm install @sanity/image-url @sanity/vision query-string sanity)
 -   Create a file structure
 -   Update Tailwind.config.ts and global.css
+
+-   Design the Navbar
+-   Design the Footer
+-   Design the Home body
+-   Create the SearchForm component
+-   Create the Filter component
