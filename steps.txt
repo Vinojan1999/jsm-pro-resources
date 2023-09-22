@@ -46,3 +46,5 @@
 -   Create 'ResourceHeader' component
 -   Update 'sanity/utils.ts' for URL query params
 -   Import the 'query-string' library into the 'utils.ts'
+-   Do Filter by category
+-   Do Search by query

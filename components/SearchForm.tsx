@@ -1,12 +1,44 @@
 "use client"
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 
 import { Input } from '@/components/ui/input'
+import { formUrlQuery } from '@/sanity/utils'
 
 const SearchForm = () => {
+    const searchParams = useSearchParams();
+    const router = useRouter();
+    const pathname = usePathname();
+
     const [search, setSearch] = useState('');
+
+    useEffect(() => {
+        let newUrl = '';
+
+        // Debouncing an input simply means that we won't be making a request  every time that we add a new keystroke, 
+        //     rather will wait for about 2ms to 300ms and then once we type enough charesters in will make a search
+        const delayDebounceFn = setTimeout(() => {
+            if(search) {
+                newUrl = formUrlQuery({
+                    params: searchParams.toString(),
+                    key: 'query',
+                    value: search
+                })
+            } else {
+                newUrl = formUrlQuery({
+                    params: searchParams.toString(),
+                    keysToRemove: ['query']     // to remove keystroke
+                })
+            }
+
+            router.push(newUrl, { scroll: false });
+        }, 300)     // I can type as much as I want, nothing gonna happen. But Once I stoped typing for 300ms, then changes going to be applied 
+
+        return () => clearTimeout(delayDebounceFn)
+    }, [search])
+    
 
   return (
     <form className='flex-center mx-auto mt-10 w-full sm:-mt-10 sm:px-5'>

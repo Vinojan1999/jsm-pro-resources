@@ -33,14 +33,21 @@ export function buildQuery(params: BuildQueryParams) {
 
 interface UrlQueryParams {
     params: string;
-    key: string;
-    value: string | null;
+    key?: string;       // If the key and value is optional, we can just add '?'
+    value?: string | null;
+    keysToRemove?: string[];
 }
 
-export function formUrlQuery({ params, key, value }: UrlQueryParams) {
+export function formUrlQuery({ params, key, value, keysToRemove }: UrlQueryParams) {
     const currentUrl = qs.parse(params);
 
-    currentUrl[key] = value;
+    if(keysToRemove) {
+        keysToRemove?.forEach((keysToRemove) => {
+            delete currentUrl[keysToRemove];
+        })
+    } else if(key && value) {
+        currentUrl[key] = value
+    }
 
     return qs.stringifyUrl(
         { url: window.location.pathname, query: currentUrl },
