@@ -49,3 +49,5 @@
 -   Do Filter by category
 -   Do Search by query
 -   Develop the 'ResourceHeader' component
+
+-   Create the resourcePlaylist
