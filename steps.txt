@@ -9,3 +9,37 @@
 -   Design the Home body
 -   Create the SearchForm component
 -   Create the Filter component
+
+-   Install the Sanity Cli (npm install --global sanity@latest)
+-   Login the Sanity through the terminal (sanity login)
+-   Create Sanity (npm create sanity@latest)
+    Setup configurations.
+    - Create new project
+    - jsm-pro-resources
+    - default dataset configuration? Yes
+    - add configuration files? Yes
+    - TypeScript? Yes
+    - Embedded sanity studio? Yes
+    - Next.js app directory for routes? Yes
+    - Route for the studio? /studio
+    - Clean project with no predefined schemas
+    - add the project ID and dataset to the .env? Yes
+-   Change the file structure of sanity
+-   Create the resource schema in 'resource.schema.ts'
+-   Create the resource playlist schema in 'resource-playlist.schema.ts'
+-   Export both schemas as 'resource, resourcePlaylist' (these are only the two different object)
+-   Reference there two object to sanity through 'sanity.config.ts'
+
+-   Route the url (localhost:3000/studio), add cors origin and signin the sanity account
+-   Create action.ts file to allows to fetch the data to the server side
+-   Making queries too sanity client (lib/client.ts)
+// Currently we have one client, But for updating the view we need specific permissions. 
+// Sanity is going to allows to perform the POST and PATCH method by using tokens 
+// We gonna create two different clients depending on the permissions (readClient, writeClient)
+-   Add token to the client
+-   Create a new API token in Sanity Management copy the token and add to .env
+-   Create utils.ts file into 'sanity'
+-   Create 'actions.ts' file and write 'getResources' function into that
+
+-   Call the getResources function to Home page and Fetch resources data
+-   Create 'ResourceCard' component
