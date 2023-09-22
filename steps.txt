@@ -43,3 +43,6 @@
 
 -   Call the getResources function to Home page and Fetch resources data
 -   Create 'ResourceCard' component
+-   Create 'ResourceHeader' component
+-   Update 'sanity/utils.ts' for URL query params
+-   Import the 'query-string' library into the 'utils.ts'

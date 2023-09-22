@@ -1,17 +1,23 @@
 import Filters from "@/components/Filters"
 import ResourceCard from "@/components/ResourceCard";
+import ResourceHeader from "@/components/ResourceHeader";
 import SearchForm from "@/components/SearchForm"
 import { getResources } from "@/sanity/actions"
 
 // To remove the cache and refresh the resources in every 900s (15min)
 export const revalidate = 900;
 
+interface Props {
+  searchParams:{ [key: string]: string | undefined }
+}
+
 // Keeping the main page for Server side render for the Performance
-const HomePage = async () => {
+const HomePage = async ({ searchParams } : Props) => {
+  console.log(searchParams);
 
   const resources = await getResources({
     query: '',
-    category: '',
+    category: searchParams?.category || '',
     page: '1'
   });
 
@@ -29,7 +35,7 @@ const HomePage = async () => {
       <Filters />
 
       <section className="flex-center mt-6 w-full flex-col sm:mt-20">
-        Header
+        <ResourceHeader/>
 
         <div className="mt-12 flex w-full flex-wrap justify-center gap-16 sm:justify-start">
           {resources?.length > 0 ? (
