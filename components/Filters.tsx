@@ -43,7 +43,7 @@ const Filters = () => {
           onClick={() => handleFilter(link)}    // for using onClick, we have to use "use client"
           className={`
             ${ active === link ? 'gradient_blue-purple text-white' : '' }
-            whitespace-nowrap rounded-lg px-8 py-2.5 capitalize
+            whitespace-nowrap rounded-lg px-8 py-2.5 capitalize border border-black-300
           `}
         >
           {link}

@@ -51,3 +51,15 @@
 -   Develop the 'ResourceHeader' component
 
 -   Create the resourcePlaylist
+
+-   SEO improvements
+
+
+
+############################
+
+YT: https://www.youtube.com/watch?v=3WCIyNOrzwM&t=5860s
+
+Live Site: https://jsm-resources-next13.vercel.app/
+
+Git: https://github.com/adrianhajdin/jsm_resources_next13
