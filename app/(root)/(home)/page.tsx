@@ -33,27 +33,33 @@ const HomePage = async ({ searchParams } : Props) => {
 
       <Filters />
 
-      <section className="flex-center mt-6 w-full flex-col sm:mt-20">
-        <ResourceHeader/>
+      {(searchParams?.query || searchParams?.category) && (
+        <section className="flex-center mt-6 w-full flex-col sm:mt-20">
+          <ResourceHeader
+            title='Resources'
+            category={searchParams?.category || ''}
+            query={searchParams?.query || ''}
+          />
 
-        <div className="mt-12 flex w-full flex-wrap justify-center gap-16 sm:justify-start">
-          {resources?.length > 0 ? (
-            resources.map((resource: any) => (
-              <ResourceCard 
-                key={resource._id}
-                title={resource.title}
-                id={resource._id}
-                image={resource.image}
-                downloadNumber={resource.views}
-              />
-            ))
-          ) : (
-            <p className="bado-regular text-white-400">
-              No resources found!
-            </p>
-          )}
-        </div>
-      </section>
+          <div className="mt-12 flex w-full flex-wrap justify-center gap-16 sm:justify-start">
+            {resources?.length > 0 ? (
+              resources.map((resource: any) => (
+                <ResourceCard 
+                  key={resource._id}
+                  title={resource.title}
+                  id={resource._id}
+                  image={resource.image}
+                  downloadNumber={resource.views}
+                />
+              ))
+            ) : (
+              <p className="bado-regular text-white-400">
+                No resources found!
+              </p>
+            )}
+          </div>
+        </section>
+      )}
     </main>
   )
 }

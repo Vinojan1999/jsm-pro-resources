@@ -48,3 +48,4 @@
 -   Import the 'query-string' library into the 'utils.ts'
 -   Do Filter by category
 -   Do Search by query
+-   Develop the 'ResourceHeader' component
