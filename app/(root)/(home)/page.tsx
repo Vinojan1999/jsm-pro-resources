@@ -44,7 +44,7 @@ const HomePage = async ({ searchParams } : Props) => {
             query={searchParams?.query || ''}
           />
 
-          <div className="mt-12 flex w-full flex-wrap justify-center gap-16 sm:justify-start">
+          <div className="mt-12 flex w-full flex-wrap justify-center sm:gap-16 sm:justify-start">
             {resources?.length > 0 ? (
               resources.map((resource: any) => (
                 <ResourceCard 
@@ -70,7 +70,7 @@ const HomePage = async ({ searchParams } : Props) => {
           <h1 className="heading3 self-start text-white-800">
             {item.title}
           </h1>
-          <div className="mt-12 flex w-full flex-wrap justify-center gap-16 sm:justify-start">
+          <div className="mt-12 flex w-full flex-wrap justify-center sm:gap-20 gap-16">
             {item.resources.map((resource: any) => (
               <ResourceCard 
                 key={resource._id}
