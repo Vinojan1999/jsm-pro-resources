@@ -17,6 +17,11 @@ const schema = {
       options: { source: 'title' }
     },
     {
+      name: 'description',
+      title: 'Description',
+      type: 'string'
+    },
+    {
       name: 'downloadLink',
       title: 'Download Link',
       type: 'url',
