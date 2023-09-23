@@ -14,7 +14,9 @@ export function buildQuery(params: BuildQueryParams) {
     // Create some of the basic GROQ queries
     const conditions = [`*[_type=="${type}"`];
   
-    if (query) conditions.push(`title match "*${query}*"`);
+    if (query) {
+        conditions.push(`(title match "*${query}*" || description match "*${query}*")`);
+    }
   
     if (category && category !== "all") {
       conditions.push(`category == "${category}"`);
@@ -29,7 +31,7 @@ export function buildQuery(params: BuildQueryParams) {
           .slice(1)
           .join(" && ")})][${offset}...${limit}]`
       : `${conditions[0]}][${offset}...${limit}]`;
-  }
+}
 
 interface UrlQueryParams {
     params: string;
