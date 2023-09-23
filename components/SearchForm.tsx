@@ -51,7 +51,7 @@ const SearchForm = () => {
                 height={32}
             />
             <Input
-                className='base-regular h-fit border border-white-800/10 bg-black-300 py-6 pl-20 pr-8 text-white-800 !ring-0 !ring-offset-0 placeholder:text-white-800 rounded-xl' 
+                className='base-regular h-fit border border-black-400 bg-black-300 py-4 sm:py-5 pl-20 pr-8 text-white-800 !ring-0 !ring-offset-0 placeholder:text-white-800/40 rounded-xl' 
                 type='text'
                 placeholder='Search...'
                 value={search}

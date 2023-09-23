@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useSearchParams ,useRouter } from "next/navigation";
 import { formUrlQuery } from "@/sanity/utils";
 
-const links = ['All', 'Next 13', 'Frontend', 'Backend', 'Fullstack'];
+const links = ['All', 'JSM Resources', 'Science', 'Programming', 'Data Science & ML', 'Business', 'Communication', 'Finance', 'Human Behavior', 'Productivity', 'Tamil Tech', 'Tamil Novels'];
 
 const Filters = () => {
   const [active, setActive] = useState('');
@@ -36,14 +36,14 @@ const Filters = () => {
   }
 
   return (
-    <ul className="text-white-800 body-text no-scrollbar flex w-full max-w-full gap-2 overflow-auto py-12 sm:max-w-2xl">
+    <ul className="text-white-800 body-text no-scrollbar flex w-full max-w-full gap-2 overflow-auto py-12">
       {links.map((link) => (
         <button
           key={link}
           onClick={() => handleFilter(link)}    // for using onClick, we have to use "use client"
           className={`
             ${ active === link ? 'gradient_blue-purple text-white' : '' }
-            whitespace-nowrap rounded-lg px-8 py-2.5 capitalize border border-black-300
+            whitespace-nowrap rounded-lg px-8 py-2.5 capitalize border border-black-300 hover:bg-black-300/80
           `}
         >
           {link}
